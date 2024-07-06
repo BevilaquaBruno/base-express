@@ -1,6 +1,6 @@
 # Para rodar:
 
-> Precisa instalar o node
+> Precisa instalar o [node](https://nodejs.org/pt)
 
 > Criar um FTP de exemplo pode usar o https://sftpcloud.io/tools/free-ftp-server
 
