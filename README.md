@@ -23,3 +23,5 @@
 ### Quando acessar a página [localhost:3000/images](localhost:3000/images) a api vai consultar no FTP e vai baixar só as imagens que ainda não estão na pasta `public/images`, a lista de imagens ele manda pro front renderizar.
 
 ### Toda vez que acessa essa página ele acessa o FTP e busca as imagens. Se for o caso da pra criar um endpoint que só faz o download e o link da página fica mais rápido (eu acho).
+
+![Imagem de exemplo](public/app_exemplo.png)
