@@ -7,40 +7,42 @@ var path = require('path');
 var createError = require('http-errors');
 //var fs = require('fs')
 
+//inicia o express (api)
 const app = express();
 
+// configura as variáveis do .env
 dotenv.config();
 const port = process.env.PORT;
 
+//funções de segurança do express
 app.use(helmet());
 app.disable('x-powered-by');
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 
-// create a write stream (in append mode)
-//var accessLogStream = fs.createWriteStream(path.join(__dirname, 'access.log'), { flags: 'a' })
-//app.use(morgan('dev', { stream: accessLogStream }));
+// morgan é um logger, que mostra no cmd as urls que estão sendo visitadas
 app.use(morgan('dev'));
 
-//uncomment when have static files
+//define o diretório public como estático
 app.use(express.static(path.join(__dirname, 'public')));
 
-// view engine setup
+// define o pug como renderizador de views - https://pugjs.org/
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'pug');
 
+// pega a rota das imagens
 const imagesRouter = require('./routes/images');
 
-//routes
-app.use('/images', imagesRouter);
+// chama arota no /
+app.use('/', imagesRouter);
 
-// catch 404 and forward to error handler
+// Handle para caso acessar uma página que não existe
 app.use(function(req, res, next) {
   next(createError(404));
 });
 
-// error handler
+// chama a página
 app.use(function(err, req, res, next) {
   // set locals, only providing error in development
   res.locals.message = err.message;
@@ -51,6 +53,7 @@ app.use(function(err, req, res, next) {
   res.render('error');
 });
 
+//roda o app
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`);
 });

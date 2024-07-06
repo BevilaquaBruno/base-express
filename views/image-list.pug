@@ -4,7 +4,7 @@ block content
   .container
     each photo, index in image_list
       figure
-        img(src=photo.name alt='', class={'blur-img-lock': photo.paid === 1})
+        img(src=photo.path+photo.name alt='', class={'blur-img-lock': photo.paid === 1})
         if photo.paid == 0
           .image-text=index+1 
         else
