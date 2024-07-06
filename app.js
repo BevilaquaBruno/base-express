@@ -24,7 +24,7 @@ app.use(cookieParser());
 app.use(morgan('dev'));
 
 //uncomment when have static files
-//app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, 'public')));
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
