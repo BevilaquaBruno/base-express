@@ -34,10 +34,10 @@ router.get('/', async (req, res, next) => {
     * 
     * Caso a imagem for paga, ele não leva ela pro front, leva só um cadeado (lock.png) no lugar, é fácil mudar se for o caso.
     */
-    if(i % 2 == 0)
-      image_list.push({name: photo.name, path: '/images/', paid: 0});
-    else
+    if(photo.name.indexOf("PAGO") != -1)
       image_list.push({name: '/lock.png', path: '', paid: 1});
+    else
+      image_list.push({name: photo.name, path: '/images/', paid: 0});
   }
 
   // fecha a conexão do ftp
