@@ -8,6 +8,7 @@
 
 - Criar uma cópia do .env.example com o nome .env
 - Preencher os campos do .env com base no acesso do FTP
+- Criar uma pasta images dentro de public/
 
 ### Rodar para criar o CSS:
 
