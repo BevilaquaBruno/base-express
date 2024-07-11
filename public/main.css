@@ -1,5 +1,5 @@
 body {
-  background-color: white;
+  background-color: rgb(85, 85, 85);
   font: 1.1em Arial, Helvetica, sans-serif;
 }
 
@@ -41,6 +41,6 @@ figure a {
 }
 
 .blur-img-lock {
-  filter: blur(20px);
+  filter: blur(10px);
 }
 
