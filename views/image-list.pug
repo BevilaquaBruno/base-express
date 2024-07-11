@@ -3,7 +3,7 @@ extends layout
 block content
   .container
     each photo, index in image_list
-      figure
+      div.image-pattern
         img(src=photo.path+photo.name alt='', class={'blur-img-lock': photo.paid === 1})
         if photo.paid == 0
           .image-text=index+1 
